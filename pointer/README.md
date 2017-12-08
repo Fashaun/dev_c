@@ -66,3 +66,8 @@ int y = 20;
 int* const vptr = &x;
 vptr = &y;  // error,  assignment of read-only variable `vptr'
 ```
+
+## Pointer Operation
+
+* malloc()、free()、calloc() and realloc()
+
