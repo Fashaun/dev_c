@@ -30,7 +30,7 @@ C development practice
 
 
 Reference:
-    https://openhome.cc/Gossip/CGossip/index.html
-    http://ccckmit.wikidot.com/cp:main
-    http://devdocs.io
-    https://docs.segmentfault.com/
+    https://openhome.cc/Gossip/CGossip/index.html <br>
+    http://ccckmit.wikidot.com/cp:main <br>
+    http://devdocs.io <br>
+    https://docs.segmentfault.com/ <br>
