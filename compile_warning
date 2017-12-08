@@ -2,4 +2,6 @@ Compiler: c99, gnu99
 
 Compile Warning
 
-* 
+* Implicit declaration of function ...
+1  沒有把 function 所在的c文件生成.o object file
+2  在function 所在的c文件中define了，但是沒有在與之相關聯的.h文件中 declare
