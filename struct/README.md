@@ -67,3 +67,5 @@ ptr = &ball;
 ```
 printf("ball: %s\t%.2f\n", ptr->color, ptr->radius);
 ```
+* Struct and Pointer Recall
+
