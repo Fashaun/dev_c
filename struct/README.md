@@ -44,3 +44,22 @@ losangeles.number = 1;
 losangeles.ball.color = "red";
 losangeles.ball.radius = 5.0;
 ```
+
+* Access struct by pointer
+
+1. Create a struct
+```
+struct Ball ball = {"red", 4.0};
+```
+2. Create a struct pointer
+```
+struct Ball *ptr;
+```
+3. let the pointer point to the struct address
+```
+ptr = &ball;
+```
+4. Access by the '->' operator
+```
+printf("ball: %s\t%.2f\n", ptr->color, ptr->radius);
+```
