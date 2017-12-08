@@ -5,8 +5,7 @@ char func_with_arg(int, char);
 
 int main(void) {
 
-    int (*ptr1)() = foo;
-
+    int (*ptr1)() = foo; // link to function declare
 
     func_witout_arg();
     ptr1();
@@ -20,8 +19,6 @@ int main(void) {
 
     return 0;
 }
-
-
 
 int func_witout_arg(void) {
     puts("function pointer");
