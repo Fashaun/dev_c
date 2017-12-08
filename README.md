@@ -1,2 +1,2 @@
-# dev-c
+# dev_c
 C development practice
