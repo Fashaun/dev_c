@@ -69,5 +69,42 @@ vptr = &y;  // error,  assignment of read-only variable `vptr'
 
 ## Pointer Operation
 
+* Double Pointer (Pointer to Pointer) 
+```
+int p = 10;
+int *ptr1 = &p;
+int **ptr2 = &ptr1;
+```
+ptr1 儲存了 p 變數佔有的位址，而 ptr2 則儲存了 ptr1 佔有的位址，所以使用 * 取值運算子時，*ptr2 取出的是 ptr1 儲存的值，也就是 &p，而再使用一次 * 運算子時，也就是 **ptr2 時，因為 *ptr2 == ptr1，所以 *(*ptr2 ) == *ptr1，而 *ptr1 == p，所以也就是取出了 p 的值了。
+
+* Access char by pointer
+
+好處: 可以直接 assign value, 不用再用 string function (stcpy ...)
+```
+char *str = "hello";
+str = "world";
+
+char str[] = "hello"; // 
+str = "world";  // error, incompatible types in assignment
+```
+* Function Pointer
+
+函式本身在記憶體中也佔有一個空間, 用變數的概念去想 ... 所以就可以用一個 pointer access
+
+returnval_type (*pointer_name)(args) = func_name(); 
+
+And the pointer to the memory address of function should declare with the same type of args and return value
+
+```
+int foo_without_arg(void);
+char func_with_arg(int, char);
+int main () {
+    int  (*ptr)() = foo_without_arg;
+    char (*ptr2)(int, char) = foo_with_arg; 
+}
+```
+
+
 * malloc()、free()、calloc() and realloc()
+
 
