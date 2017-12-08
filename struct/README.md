@@ -25,3 +25,22 @@ typedef struct {
     double radius;
 } Ball;
 ```
+
+* struct in struct 
+```
+struct nba_team {
+    char *name;
+    int number;
+
+    struct {
+        char *color;
+        double radius;
+    } ball;
+};
+
+struct nba_team losangelos;
+losangeles.name = "laker";
+losangeles.number = 1;
+losangeles.ball.color = "red";
+losangeles.ball.radius = 5.0;
+```
