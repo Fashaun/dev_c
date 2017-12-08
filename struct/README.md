@@ -68,4 +68,20 @@ ptr = &ball;
 printf("ball: %s\t%.2f\n", ptr->color, ptr->radius);
 ```
 * Struct and Pointer Recall
+    - Get the memory address of struct member
+```
+// Not good style
+struct Ball ball = {"red", 4.0};
+printf("%p\n", &ball.color);
 
+// Better style
+struct Ball ball = {"red", 4.0};
+printf("%p\n", &(ball.color));
+```
+    - 
+```
+// Not good style
+printf("%p\n", &ptr->color);
+// Better style
+printf("%p\n", &(ptr->color));
+```
