@@ -47,6 +47,10 @@ losangeles.ball.radius = 5.0;
 
 * Access struct by pointer
 
+使用時機
+. 函式想改變的是被傳遞的 struct 實例本身，而不是實例的複本
+. 另情況效率考量，如果 struct 實例本身很龐大，若不想有複製整個 struct 實例負擔
+
 1. Create a struct
 ```
 struct Ball ball = {"red", 4.0};
