@@ -104,6 +104,9 @@ int main () {
 }
 ```
 
+* Struct Pointer
+
+Use '->' to access the address of struct
 
 * malloc()、free()、calloc() and realloc()
 
