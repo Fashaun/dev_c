@@ -111,3 +111,45 @@ Use '->' to access the address of struct
 * malloc()、free()、calloc() and realloc()
 
 
+## About Style and common error
+
+### Not checking for allocation failures
+
+Unsafe way:
+
+```
+struct SomeStruct *s = malloc(sizeof *s);
+s->someValue = 0; /* UNSAFE, because s might be a null pointer */
+```
+
+Safe way:
+```
+struct SomeStruct *s = malloc(sizeof *s);
+if (s)
+{
+    s->someValue = 0; /* This is safe, we have checked that s is valid */
+}
+```
+
+### Using literal numbers instead of sizeof when requesting memory
+
+- Non-portable allocation:
+```int *intPtr = malloc(4*1000); /* allocating storage for 1000 int */ long *longPtr = malloc(8*1000); /* allocating storage for 1000 long */```
+
+- Portable allocation:
+```int *intPtr = malloc(sizeof(int)*1000); /* allocating storage for 1000 int */ long *longPtr = malloc(sizeof(long)*1000); /* allocating storage for 1000 long */```
+
+- Or, better still:
+```int *intPtr = malloc(sizeof(*intPtr)*1000); /* allocating st```
+
+## Terms
+
+- Wild pointer 
+    - 野 ptr, 沒經過 initialization 的 ptr
+    - ptr 必須先經過 initialization 才能使用
+    - compile 可以發現
+
+- dangling pointer
+    - 該 ptr 指向的位址已經無法使用或是已經被別人使用
+    - compile 可以發現
+
